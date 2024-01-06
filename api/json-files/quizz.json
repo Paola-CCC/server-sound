@@ -1,0 +1,90 @@
+{
+    "title": "Quizz pour Cours 283 De TEST SI jamapas",
+    "questions": [
+      {
+        "content": "1. Quelle est la racine carrée de 36 ?",
+        "suggests": [
+          {
+            "content": "6",
+            "response_expected": true
+          },
+          {
+            "content": "45",
+            "response_expected": false
+          },
+          {
+            "content": "9",
+            "response_expected": false
+          }
+        ]
+      },
+      {
+        "content": "2. Quel département français a pour chef-lieu Bordeaux ?",
+        "suggests": [
+          {
+            "content": "Gironde",
+            "response_expected": true
+          },
+          {
+            "content": "Mayenne",
+            "response_expected": false
+          },
+          {
+            "content": "Landes",
+            "response_expected": false
+          }
+        ]
+      },
+      {
+        "content": "3. Qu'est pour moi le père de mon père ?",
+        "suggests": [
+          {
+            "content": "Mon grand-père",
+            "response_expected": true
+          },
+          {
+            "content": "Mon neveu",
+            "response_expected": false
+          },
+          {
+            "content": "Mon oncle",
+            "response_expected": false
+          }
+        ]
+      },
+      {
+        "content": "4. Combien de voleurs accompagnaient Ali Baba ?",
+        "suggests": [
+          {
+            "content": "40",
+            "response_expected": true
+          },
+          {
+            "content": "1000",
+            "response_expected": false
+          },
+          {
+            "content": "14",
+            "response_expected": false
+          }
+        ]
+      },
+      {
+        "content": "5. -aud ou -eau ? Quel mot est mal orthographié ?",
+        "suggests": [
+          {
+            "content": "Crapeau",
+            "response_expected": true
+          },
+          {
+            "content": "Ruisseau",
+            "response_expected": false
+          },
+          {
+            "content": "Manteau",
+            "response_expected": false
+          }
+        ]
+      }
+    ]
+}

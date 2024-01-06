@@ -1,0 +1,56 @@
+version: "3.8"
+services:
+
+    alpine:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: saline-back
+        restart: on-failure
+        ports:
+            - "1234:80"
+        volumes:
+            - ./conf/site.conf:/etc/nginx/http.d/default.conf
+            - ./api:/var/www/html
+        networks:
+            - acpSymfony
+
+    db:
+        image: mariadb:10.8.2
+        container_name: saline-database
+        restart: always
+        tty: true
+        volumes:
+            - db-data:/var/lib/mysql
+        environment:
+            MYSQL_USER: 'root'
+            MYSQL_ROOT_PASSWORD: ${MYSQL_PASS}
+        ports:
+            - "3306:3306"
+        networks:
+            - acpSymfony
+
+    phpmyadmin:
+        image: phpmyadmin:latest
+        restart: always
+        ports:
+            - '8080:80'
+        environment:
+            PMA_HOST: db
+            PMA_PASSWORD: ${PMA_PASS}
+            PMA_ARBITRARY: 1
+            PMA_USER: root
+            PMA_PORT: 3306
+        depends_on:
+            - db
+        networks:
+            - acpSymfony
+
+volumes:
+    db-data:
+    node_modules:
+
+
+networks:
+    acpSymfony:
+        driver: bridge
